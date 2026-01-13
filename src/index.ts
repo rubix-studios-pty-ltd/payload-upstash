@@ -1,9 +1,9 @@
-import { type KVAdapter, type KVAdapterResult, type KVStoreValue } from 'payload'
 import { Redis } from '@upstash/redis'
+import { type KVAdapter, type KVAdapterResult, type KVStoreValue } from 'payload'
 
 export class UpstashKVAdapter implements KVAdapter {
-  private redis: Redis
   private prefix: string
+  private redis: Redis
 
   constructor(keyPrefix: string, redis: Redis) {
     this.redis = redis
@@ -14,21 +14,25 @@ export class UpstashKVAdapter implements KVAdapter {
     return `${this.prefix}${key}`
   }
 
-  async get<T extends KVStoreValue>(key: string): Promise<T | null> {
-    const raw = await this.redis.get(this.key(key))
-    if (!raw) return null
-    if (typeof raw === 'string') {
-        return JSON.parse(raw) as T
-    }
-    return raw as T
-  }
-
-  async set(key: string, data: KVStoreValue): Promise<void> {
-    await this.redis.set(this.key(key), JSON.stringify(data))
+  /**
+   * Safe clear strategy: rotate prefix
+   * Payload rarely calls this in production
+   */
+  clear(): Promise<void> {
+    throw new Error('clear() is not supported by Upstash Redis')
   }
 
   async delete(key: string): Promise<void> {
     await this.redis.del(this.key(key))
+  }
+
+  async get<T extends KVStoreValue>(key: string): Promise<null | T> {
+    const raw = await this.redis.get(this.key(key))
+    if (!raw) {return null}
+    if (typeof raw === 'string') {
+      return JSON.parse(raw) as T
+    }
+    return raw as T
   }
 
   async has(key: string): Promise<boolean> {
@@ -39,31 +43,25 @@ export class UpstashKVAdapter implements KVAdapter {
   /**
    * Not supported in Upstash (no KEYS command)
    */
-  async keys(): Promise<string[]> {
+  keys(): Promise<string[]> {
     throw new Error('keys() is not supported by Upstash Redis')
   }
 
-  /**
-   * Safe clear strategy: rotate prefix
-   * Payload rarely calls this in production
-   */
-  async clear(): Promise<void> {
-    throw new Error('clear() is not supported by Upstash Redis')
+  async set(key: string, data: KVStoreValue): Promise<void> {
+    await this.redis.set(this.key(key), JSON.stringify(data))
   }
 }
 
 export type UpstashKVAdapterOptions = {
   keyPrefix?: string
-  url?: string
   token?: string
+  url?: string
 }
 
-export const upstashKVAdapter = (
-  options: UpstashKVAdapterOptions = {}
-): KVAdapterResult => {
+export const upstashKVAdapter = (options: UpstashKVAdapterOptions = {}): KVAdapterResult => {
   const redis = new Redis({
-    url: options.url ?? process.env.UPSTASH_URL!,
     token: options.token ?? process.env.UPSTASH_TOKEN!,
+    url: options.url ?? process.env.UPSTASH_URL!,
   })
 
   const keyPrefix = options.keyPrefix ?? 'payload-kv:'
