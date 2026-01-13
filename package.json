@@ -1,0 +1,93 @@
+{
+  "name": "@rubixstudios/payload-upstash",
+  "version": "1.0.0",
+  "description": "Upstash KV adapter for Payload",
+  "license": "MIT",
+  "author": "Rubix Studios <hello@rubixstudios.com.au> (https://rubixstudios.com.au)",
+  "homepage": "https://rubixstudios.com.au",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rubix-studios-pty-ltd/payload-upstash.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rubix-studios-pty-ltd/payload-upstash/issues"
+  },
+  "maintainers": [
+    {
+      "name": "Rubix Studios",
+      "email": "hello@rubixstudios.com.au",
+      "url": "https://rubixstudios.com.au"
+    }
+  ],
+  "type": "module",
+  "keywords": [
+    "payload",
+    "payloadcms",
+    "KV",
+    "redis",
+    "plugin",
+    "typescript",
+    "react",
+    "nextjs"
+  ],
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "import": "./src/index.ts",
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  },
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "pnpm build:types && pnpm build:swc",
+    "build:swc": "swc ./src -d ./dist --config-file .swcrc --strip-leading-paths",
+    "build:types": "tsc -p tsconfig.json",
+    "clean": "rimraf -g {dist,*.tsbuildinfo}",
+    "format": "pnpx prettier --write . --log-level warn",
+    "format:check": "pnpx prettier --check .",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "update": "pnpm update --latest && pnpm install && pnpm prune && pnpm dedupe",
+    "release": "semantic-release"
+  },
+  "publishConfig": {
+    "exports": {
+      ".": {
+        "import": "./dist/index.js",
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    },
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts"
+  },
+  "devDependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@swc/cli": "^0.7.9",
+    "@swc/core": "^1.15.8",
+    "@types/react": "^19.2.8",
+    "eslint": "^9.39.2",
+    "payload": "^3.70.0",
+    "prettier": "^3.7.4",
+    "rimraf": "^6.1.2",
+    "semantic-release": "^25.0.2",
+    "typescript": "^5.9.3"
+  },
+  "peerDependencies": {
+    "payload": "^3.66.0"
+  },
+  "engines": {
+    "node": ">=22 <24",
+    "pnpm": ">=10"
+  },
+  "dependencies": {
+    "@upstash/redis": "^1.36.1"
+  },
+  "packageManager": "pnpm@10.27.0"
+}
