@@ -15,9 +15,12 @@ export class UpstashKVAdapter implements KVAdapter {
   }
 
   async get<T extends KVStoreValue>(key: string): Promise<T | null> {
-    const raw = await this.redis.get<string>(this.key(key))
+    const raw = await this.redis.get(this.key(key))
     if (!raw) return null
-    return JSON.parse(raw) as T
+    if (typeof raw === 'string') {
+        return JSON.parse(raw) as T
+    }
+    return raw as T
   }
 
   async set(key: string, data: KVStoreValue): Promise<void> {
