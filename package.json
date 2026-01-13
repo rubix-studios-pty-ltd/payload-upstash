@@ -1,6 +1,6 @@
 {
   "name": "@rubixstudios/payload-upstash",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "Upstash KV adapter for Payload",
   "license": "MIT",
   "author": "Rubix Studios <hello@rubixstudios.com.au> (https://rubixstudios.com.au)",
