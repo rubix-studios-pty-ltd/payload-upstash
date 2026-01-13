@@ -33,13 +33,13 @@
   "sideEffects": false,
   "exports": {
     ".": {
-      "import": "./src/index.ts",
-      "types": "./src/index.ts",
-      "default": "./src/index.ts"
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
     }
   },
-  "main": "./src/index.ts",
-  "types": "./src/index.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
@@ -54,17 +54,6 @@
     "lint:fix": "eslint . --fix",
     "update": "pnpm update --latest && pnpm install && pnpm prune && pnpm dedupe",
     "release": "semantic-release"
-  },
-  "publishConfig": {
-    "exports": {
-      ".": {
-        "import": "./dist/index.js",
-        "types": "./dist/index.d.ts",
-        "default": "./dist/index.js"
-      }
-    },
-    "main": "./dist/index.js",
-    "types": "./dist/index.d.ts"
   },
   "devDependencies": {
     "@semantic-release/changelog": "^6.0.3",
@@ -85,6 +74,20 @@
   "engines": {
     "node": ">=22 <24",
     "pnpm": ">=10"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/",
+    "main": "./dist/index.js",
+    "provenance": true,
+    "types": "./dist/index.d.ts",
+    "exports": {
+      ".": {
+        "import": "./dist/index.js",
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    }
   },
   "dependencies": {
     "@upstash/redis": "^1.36.1"
