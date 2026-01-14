@@ -1,13 +1,36 @@
 import { Redis } from '@upstash/redis'
 import { type KVAdapter, type KVAdapterResult, type KVStoreValue } from 'payload'
 
+export type TTLRule = {
+  prefix: string
+  ttl: number
+}
+
+export type TTLConfig = TTLRule[]
+
 export class UpstashKVAdapter implements KVAdapter {
   private prefix: string
   private redis: Redis
+  private resolveTTL?: (key: string) => number | undefined
 
-  constructor(keyPrefix: string, redis: Redis) {
+  constructor(
+    keyPrefix: string,
+    redis: Redis,
+    ttlConfig?: TTLConfig,
+  ) {
     this.redis = redis
     this.prefix = keyPrefix
+
+    if (ttlConfig) {
+      this.resolveTTL = (key: string) => {
+        for (const rule of ttlConfig) {
+          if (key.startsWith(rule.prefix)) {
+            return rule.ttl
+          }
+        }
+        return undefined
+      }
+    }
   }
 
   private key(key: string) {
@@ -27,9 +50,8 @@ export class UpstashKVAdapter implements KVAdapter {
   }
 
   async get<T extends KVStoreValue>(key: string): Promise<null | T> {
-    const raw = await this.redis.get<T>(this.key(key))
-    if (!raw) {return null}
-    return raw
+    const value = await this.redis.get<T>(this.key(key))
+    return value ?? null
   }
 
   async has(key: string): Promise<boolean> {
@@ -45,13 +67,37 @@ export class UpstashKVAdapter implements KVAdapter {
   }
 
   async set(key: string, data: KVStoreValue): Promise<void> {
-    await this.redis.set(this.key(key), data)
+    const ttl = this.resolveTTL?.(key)
+
+    if (ttl && ttl > 0) {
+      await this.redis.set(this.key(key), data, { ex: ttl })
+    } else {
+      await this.redis.set(this.key(key), data)
+    }
   }
 }
 
 export type UpstashKVAdapterOptions = {
+  /**
+   * Optional prefix for Redis keys
+   *
+   * @default 'payload-kv:'
+   */
   keyPrefix?: string
+
+  /**
+   * Upstash REST token
+   */
   token?: string
+
+  /**
+   * Optional TTL configuration
+   */
+  ttl?: TTLConfig
+
+  /**
+   * Upstash REST URL
+   */
   url?: string
 }
 
@@ -64,6 +110,6 @@ export const upstashKVAdapter = (options: UpstashKVAdapterOptions = {}): KVAdapt
   const keyPrefix = options.keyPrefix ?? 'payload-kv:'
 
   return {
-    init: () => new UpstashKVAdapter(keyPrefix, redis),
+    init: () => new UpstashKVAdapter(keyPrefix, redis, options.ttl),
   }
 }
