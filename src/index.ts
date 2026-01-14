@@ -13,11 +13,7 @@ export class UpstashKVAdapter implements KVAdapter {
   private redis: Redis
   private resolveTTL?: (key: string) => number | undefined
 
-  constructor(
-    keyPrefix: string,
-    redis: Redis,
-    ttlConfig?: TTLConfig,
-  ) {
+  constructor(keyPrefix: string, redis: Redis, ttlConfig?: TTLConfig) {
     this.redis = redis
     this.prefix = keyPrefix
 
