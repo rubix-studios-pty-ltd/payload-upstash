@@ -21,6 +21,12 @@ export default buildConfig({
     token: process.env.UPSTASH_TOKEN!,
     // Optional prefix for Upstash Redis keys to isolate the store. Defaults to 'payload-kv:'
     keyPrefix: 'kv-storage:',
+    // Optional TTL configuration for automatic expiration by key prefix
+    ttl: [
+      { prefix: 'session:', ttl: 3600 },
+      { prefix: 'cache:', ttl: 300 },
+      { prefix: 'temp:', ttl: 60 },
+    ]
   }),
 })
 ```
