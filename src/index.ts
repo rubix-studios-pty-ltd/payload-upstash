@@ -65,6 +65,11 @@ export class UpstashKVAdapter implements KVAdapter {
     return value ?? null
   }
 
+  async getdel<T extends KVStoreValue>(key: string): Promise<null | T> {
+    const value = await this.redis.getdel<T>(this.key(key))
+    return value ?? null
+  }
+
   async has(key: string): Promise<boolean> {
     const exists = await this.redis.exists(this.key(key))
     return exists === 1
