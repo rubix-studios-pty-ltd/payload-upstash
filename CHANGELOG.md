@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.5](https://github.com/rubix-studios-pty-ltd/payload-upstash/compare/v1.0.4...v1.0.5) (2026-01-15)
+
+
+### Bug Fixes
+
+* update @types/node to version 25.0.9 ([33cd79d](https://github.com/rubix-studios-pty-ltd/payload-upstash/commit/33cd79dc10358b9f7f278c9ee88d7926eb3d518e))
+* update node engine version to support 24.x and 25.x ([c5b19cb](https://github.com/rubix-studios-pty-ltd/payload-upstash/commit/c5b19cbf57590f5188446c37e932d00eee8e3133))
+* update prettier to version 3.8.0 and adjust node engine requirement ([692e61a](https://github.com/rubix-studios-pty-ltd/payload-upstash/commit/692e61a64f38fa3fc8877fb14ecdd2d41258c866))
+
 ## [1.0.4](https://github.com/rubix-studios-pty-ltd/payload-upstash/compare/v1.0.3...v1.0.4) (2026-01-14)
 
 
