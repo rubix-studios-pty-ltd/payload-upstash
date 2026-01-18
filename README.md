@@ -26,7 +26,7 @@ export default buildConfig({
       { prefix: 'session:', ttl: 3600 },
       { prefix: 'cache:', ttl: 300 },
       { prefix: 'temp:', ttl: 60 },
-    ]
+    ],
   }),
 })
 ```

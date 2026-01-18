@@ -1,26 +1,26 @@
 import { Redis } from '@upstash/redis'
 import { type KVAdapter, type KVAdapterResult, type KVStoreValue } from 'payload'
 
-/**  
- * Rule used to determine the time-to-live (TTL) for keys matching a prefix.  
- */  
-export type TTLRule = {  
-  /**  
-   * Key prefix this rule applies to (matched via {@link String.startsWith}).  
-   */  
-  prefix: string  
-  /**  
-   * Time-to-live in seconds, passed directly to Redis as the `ex` option.  
-   *  
-   * Expected to be a positive integer. If this value is `undefined`, `0`,  
-   * or negative, no expiration will be set for matching keys.  
-   */  
-  ttl: number  
-}  
+/**
+ * Rule used to determine the time-to-live (TTL) for keys matching a prefix.
+ */
+export type TTLRule = {
+  /**
+   * Key prefix this rule applies to (matched via {@link String.startsWith}).
+   */
+  prefix: string
+  /**
+   * Time-to-live in seconds, passed directly to Redis as the `ex` option.
+   *
+   * Expected to be a positive integer. If this value is `undefined`, `0`,
+   * or negative, no expiration will be set for matching keys.
+   */
+  ttl: number
+}
 
-/**  
- * Collection of TTL rules evaluated in order to resolve per-key expiration.  
- */  
+/**
+ * Collection of TTL rules evaluated in order to resolve per-key expiration.
+ */
 export type TTLConfig = TTLRule[]
 
 export class UpstashKVAdapter implements KVAdapter {
@@ -65,6 +65,11 @@ export class UpstashKVAdapter implements KVAdapter {
     return value ?? null
   }
 
+  async getdel<T extends KVStoreValue>(key: string): Promise<null | T> {
+    const value = await this.redis.getdel<T>(this.key(key))
+    return value ?? null
+  }
+
   async has(key: string): Promise<boolean> {
     const exists = await this.redis.exists(this.key(key))
     return exists === 1
@@ -75,6 +80,16 @@ export class UpstashKVAdapter implements KVAdapter {
    */
   keys(): Promise<string[]> {
     throw new Error('keys() is not supported by Upstash Redis')
+  }
+
+  async mget<T extends KVStoreValue>(keys: readonly string[]): Promise<Array<null | T>> {
+    if (keys.length === 0) {
+      return []
+    }
+
+    const values = await this.redis.mget<T[]>(keys.map((key) => this.key(key)))
+
+    return values.map((value) => value ?? null)
   }
 
   async set(key: string, data: KVStoreValue): Promise<void> {
