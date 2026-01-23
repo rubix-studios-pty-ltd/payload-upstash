@@ -41,13 +41,13 @@
     "release": "semantic-release"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.3.11",
+    "@biomejs/biome": "2.3.12",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "@swc/cli": "^0.7.10",
     "@swc/core": "^1.15.10",
-    "@types/react": "^19.2.8",
-    "payload": "^3.72.0",
+    "@types/react": "^19.2.9",
+    "payload": "^3.73.0",
     "rimraf": "^6.1.2",
     "semantic-release": "^25.0.2",
     "typescript": "^5.9.3"
@@ -76,5 +76,5 @@
   "dependencies": {
     "@upstash/redis": "^1.36.1"
   },
-  "packageManager": "pnpm@10.28.0"
+  "packageManager": "pnpm@10.28.1"
 }
