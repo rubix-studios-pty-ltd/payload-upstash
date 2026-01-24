@@ -8,7 +8,7 @@
 
 ## Reporting a Vulnerability
 
-We take the security of PayloadCMS + Dub Plugin seriously. If you believe you have found a security vulnerability, please report it to us following these steps:
+We take the security of PayloadCMS + Upstash Plugin seriously. If you believe you have found a security vulnerability, please report it to us following these steps:
 
 1. **DO NOT** create a public GitHub issue for the vulnerability.
 2. Contact us directly at one of the following:
