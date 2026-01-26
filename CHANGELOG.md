@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.2](https://github.com/rubix-studios-pty-ltd/payload-upstash/compare/v1.1.1...v1.1.2) (2026-01-26)
+
+
+### Bug Fixes
+
+* update lru-cache, tempy, and undici packages to latest versions (CVE) ([315eb1f](https://github.com/rubix-studios-pty-ltd/payload-upstash/commit/315eb1ff05df0e4c590a7a4fcf8b23d8dbad3107))
+* update security policy and correct plugin name in documentation ([56225f0](https://github.com/rubix-studios-pty-ltd/payload-upstash/commit/56225f0cdfbbd20dcb0362f0990876adb3323c84))
+
 ## [1.1.1](https://github.com/rubix-studios-pty-ltd/payload-upstash/compare/v1.1.0...v1.1.1) (2026-01-23)
 
 
