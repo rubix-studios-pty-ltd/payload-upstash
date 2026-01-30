@@ -20,16 +20,7 @@
     }
   ],
   "type": "module",
-  "keywords": [
-    "payload",
-    "payloadcms",
-    "KV",
-    "redis",
-    "plugin",
-    "typescript",
-    "react",
-    "nextjs"
-  ],
+  "keywords": ["payload", "payloadcms", "KV", "redis", "plugin", "typescript", "react", "nextjs"],
   "sideEffects": false,
   "exports": {
     ".": {
@@ -40,9 +31,7 @@
   },
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "scripts": {
     "build": "pnpm build:types && pnpm build:swc",
     "build:swc": "swc ./src -d ./dist --config-file .swcrc --strip-leading-paths",
@@ -56,9 +45,9 @@
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "@swc/cli": "^0.7.10",
-    "@swc/core": "^1.15.10",
+    "@swc/core": "^1.15.11",
     "@types/react": "^19.2.10",
-    "payload": "^3.73.0",
+    "payload": "^3.74.0",
     "rimraf": "^6.1.2",
     "semantic-release": "^25.0.2",
     "typescript": "^5.9.3"
