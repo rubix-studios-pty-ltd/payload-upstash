@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+# [1.2.0](https://github.com/rubix-studios-pty-ltd/payload-upstash/compare/v1.1.4...v1.2.0) (2026-02-13)
+
+
+### Bug Fixes
+
+* update payload package version to 3.76.0 in package.json and pnpm-lock.yaml ([37789b5](https://github.com/rubix-studios-pty-ltd/payload-upstash/commit/37789b5389586fd8cda7638b783c2e92f8dc541c))
+
+
+### Features
+
+* expand gitignore and update dependencies ([b196077](https://github.com/rubix-studios-pty-ltd/payload-upstash/commit/b196077270387b7469d6f9ac347acb9791212a8e))
+
 ## [1.1.4](https://github.com/rubix-studios-pty-ltd/payload-upstash/compare/v1.1.3...v1.1.4) (2026-02-06)
 
 
