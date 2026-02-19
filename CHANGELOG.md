@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.1](https://github.com/rubix-studios-pty-ltd/payload-upstash/compare/v1.2.0...v1.2.1) (2026-02-19)
+
+
+### Bug Fixes
+
+* update biome schema version to 2.4.2 and format package.json keywords and files ([c573f8a](https://github.com/rubix-studios-pty-ltd/payload-upstash/commit/c573f8a5c540c6f708b70a33ad21b3d674e771c5))
+* update biome.json to ignore specific directories and update package versions in pnpm-lock.yaml ([b79d6f9](https://github.com/rubix-studios-pty-ltd/payload-upstash/commit/b79d6f9cb0ae55a8c50699fdac91781a8a6e96c1))
+* update package.json and pnpm-lock.yaml for dependency versions and formatting ([72101af](https://github.com/rubix-studios-pty-ltd/payload-upstash/commit/72101afdfebb246c2b17670e99cdbe2fe181bce4))
+
 # [1.2.0](https://github.com/rubix-studios-pty-ltd/payload-upstash/compare/v1.1.4...v1.2.0) (2026-02-13)
 
 
