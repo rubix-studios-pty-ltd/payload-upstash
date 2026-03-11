@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.2](https://github.com/rubix-studios-pty-ltd/payload-upstash/compare/v1.2.1...v1.2.2) (2026-03-11)
+
+
+### Bug Fixes
+
+* update packageManager version to pnpm@10.30.3 in package.json ([97c893c](https://github.com/rubix-studios-pty-ltd/payload-upstash/commit/97c893c273cc79df28a54a5d4d487f734fee33d9))
+
 ## [1.2.1](https://github.com/rubix-studios-pty-ltd/payload-upstash/compare/v1.2.0...v1.2.1) (2026-02-19)
 
 
