@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.4](https://github.com/rubix-studios-pty-ltd/payload-upstash/compare/v1.2.3...v1.2.4) (2026-03-29)
+
+
+### Bug Fixes
+
+* update workflow trigger to workflow_dispatch and adjust permissions in release.yml; update biome schema version to 2.4.9; update package.json and pnpm-lock.yaml for dependency versions; modify tsconfig.json for stricter type checks and deprecation handling ([206c52f](https://github.com/rubix-studios-pty-ltd/payload-upstash/commit/206c52f71d3d957fc8b8b6b9c16af01c8e8f09ae))
+
 ## [1.2.3](https://github.com/rubix-studios-pty-ltd/payload-upstash/compare/v1.2.2...v1.2.3) (2026-03-23)
 
 
