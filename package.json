@@ -76,5 +76,5 @@
   "dependencies": {
     "@upstash/redis": "^1.37.0"
   },
-  "packageManager": "pnpm@10.33.1"
+  "packageManager": "pnpm@10.33.2"
 }
