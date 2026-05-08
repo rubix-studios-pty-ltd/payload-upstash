@@ -37,23 +37,24 @@
     "build:swc": "swc ./src -d ./dist --config-file .swcrc --strip-leading-paths",
     "build:types": "tsc -p tsconfig.json",
     "clean": "rimraf -g {dist,*.tsbuildinfo} && pnpm exec biome check --write && pnpm biome migrate --write",
-    "update": "pnpm update --latest && pnpm install && pnpm prune && pnpm dedupe && pnpm run clean",
+    "update": "pnpm self-update && pnpm update --latest && pnpm install && pnpm prune && pnpm dedupe && pnpm run clean",
     "release": "semantic-release"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.4.13",
+    "@biomejs/biome": "2.4.14",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "@swc/cli": "^0.8.1",
-    "@swc/core": "^1.15.32",
+    "@swc/core": "^1.15.33",
     "@types/react": "^19.2.14",
+    "conventional-changelog-conventionalcommits": "^9.3.1",
     "payload": "^3.84.1",
     "rimraf": "^6.1.3",
     "semantic-release": "^25.0.3",
     "typescript": "^6.0.3"
   },
   "peerDependencies": {
-    "payload": "^3.84.0"
+    "payload": "^3.84.1"
   },
   "engines": {
     "node": ">=24",
@@ -74,7 +75,7 @@
     }
   },
   "dependencies": {
-    "@upstash/redis": "^1.37.0"
+    "@upstash/redis": "^1.38.0"
   },
-  "packageManager": "pnpm@10.33.2"
+  "packageManager": "pnpm@11.0.8"
 }
