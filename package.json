@@ -41,7 +41,7 @@
     "release": "semantic-release"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.4.14",
+    "@biomejs/biome": "2.4.15",
     "@semantic-release/changelog": "^6.0.3",
     "@semantic-release/git": "^10.0.1",
     "@swc/cli": "^0.8.1",
@@ -77,5 +77,5 @@
   "dependencies": {
     "@upstash/redis": "^1.38.0"
   },
-  "packageManager": "pnpm@11.0.8"
+  "packageManager": "pnpm@11.1.1"
 }
