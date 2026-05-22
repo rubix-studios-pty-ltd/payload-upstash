@@ -5,6 +5,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.9](https://github.com/rubix-studios-pty-ltd/payload-upstash/compare/v1.2.8...v1.2.9) (2026-05-22)
+
+
+### Bug Fixes
+
+* **deps:** update pnpm to version 11.1.3 and various package dependencies ([061a343](https://github.com/rubix-studios-pty-ltd/payload-upstash/commit/061a3433571748d7f68ca97201d5bb3fcecd10d9))
+* enhance update script to include self-update command ([616384e](https://github.com/rubix-studios-pty-ltd/payload-upstash/commit/616384e315c2d6abd54f58244a71a042f40c47a8))
+* release pipeline and update packages ([ce0efcf](https://github.com/rubix-studios-pty-ltd/payload-upstash/commit/ce0efcfb45d1c6512c28feddc37e8a64231f87d7))
+* update copyright information and enhance security contact details ([03af4eb](https://github.com/rubix-studios-pty-ltd/payload-upstash/commit/03af4ebd40bd4704ac0221b74568b41d2d59a567))
+* update version reference in security policy ([a71e42f](https://github.com/rubix-studios-pty-ltd/payload-upstash/commit/a71e42f607dda2ca72c414e32af1e2f17bff965a))
+
 ## [1.2.8](https://github.com/rubix-studios-pty-ltd/payload-upstash/compare/v1.2.7...v1.2.8) (2026-04-28)
 
 
