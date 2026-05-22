@@ -22,7 +22,7 @@ Please include the following details in your report:
 - Steps to reproduce the issue
 - Potential impact of the vulnerability
 - Any possible mitigations
-- Version of PayloadCMS + Dub Plugin affected
+- Version of PayloadCMS + Upstash Plugin affected
 
 ## Response Process
 
