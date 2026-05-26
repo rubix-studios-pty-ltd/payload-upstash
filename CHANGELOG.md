@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.10](https://github.com/rubix-studios-pty-ltd/payload-upstash/compare/v1.2.9...v1.2.10) (2026-05-26)
+
+
+### Bug Fixes
+
+* **deps:** update @swc/core to version 1.15.40 and payload to version 3.85.0; update pnpm to version 11.3.0 ([c8615cf](https://github.com/rubix-studios-pty-ltd/payload-upstash/commit/c8615cf50f8e5c42ecd0458c1e85391813a6428f))
+
+
+### Performance Improvements
+
+* trigger patch release ([67b86be](https://github.com/rubix-studios-pty-ltd/payload-upstash/commit/67b86be9bd1a27c06e1351be336c6aed4935efb0))
+
 ## [1.2.9](https://github.com/rubix-studios-pty-ltd/payload-upstash/compare/v1.2.8...v1.2.9) (2026-05-22)
 
 
