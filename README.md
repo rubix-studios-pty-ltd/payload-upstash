@@ -38,3 +38,19 @@ await payload.kv.set('key', { value: 1 })
 const data = await payload.kv.get('key')
 payload.logger.info(data)
 ```
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Support
+
+For support or inquiries:
+
+- LinkedIn: [rubixvi](https://www.linkedin.com/in/rubixvi/)
+- Website: [Rubix Studios](https://rubixstudios.com.au)
+
+## Author
+
+Rubix Studios  
+[https://rubixstudios.com.au](https://rubixstudios.com.au)
