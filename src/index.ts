@@ -1,5 +1,5 @@
-import { Redis } from '@upstash/redis'
 import { type KVAdapter, type KVAdapterResult, type KVStoreValue } from 'payload'
+import { Redis } from '@upstash/redis'
 
 /**
  * Rule used to determine the time-to-live (TTL) for keys matching a prefix.
