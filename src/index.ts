@@ -94,7 +94,7 @@ export class UpstashKVAdapter implements KVAdapter {
 
   async set(key: string, data: KVStoreValue): Promise<void> {
     const upstashKey = this.key(key)
-    const ttl = this.resolveTTL?.(upstashKey)
+    const ttl = this.resolveTTL?.(key)
 
     if (ttl && ttl > 0) {
       await this.redis.set(upstashKey, data, { ex: ttl })
