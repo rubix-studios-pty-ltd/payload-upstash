@@ -43,7 +43,7 @@ importers:
         specifier: ^25.0.6
         version: 25.0.6(typescript@6.0.3)
       typescript:
-        specifier: ^6.0.3
+        specifier: 6.0.3
         version: 6.0.3
 
 packages:
