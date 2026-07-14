@@ -61,8 +61,8 @@
     "conventional-changelog-conventionalcommits": "^10.2.1",
     "payload": "^3.86.0",
     "rimraf": "^6.1.3",
-    "semantic-release": "^25.0.6",
-    "typescript": "^6.0.3"
+    "semantic-release": "^25.0.7",
+    "typescript": "6.0.3"
   },
   "peerDependencies": {
     "payload": "^3.86.0"
@@ -88,5 +88,5 @@
   "dependencies": {
     "@upstash/redis": "^1.38.0"
   },
-  "packageManager": "pnpm@11.12.0"
+  "packageManager": "pnpm@11.13.0"
 }
