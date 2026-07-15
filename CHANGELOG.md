@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.14](https://github.com/rubix-studios-pty-ltd/payload-upstash/compare/v1.2.13...v1.2.14) (2026-07-15)
+
+
+### Bug Fixes
+
+* simplify keywords and files structure in package.json; refactor TTL resolution logic in UpstashKVAdapter ([8d66e33](https://github.com/rubix-studios-pty-ltd/payload-upstash/commit/8d66e33e4cbf4a786c495d4a11343a86ca4b1c06))
+
 ## [1.2.13](https://github.com/rubix-studios-pty-ltd/payload-upstash/compare/v1.2.12...v1.2.13) (2026-07-14)
 
 
