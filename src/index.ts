@@ -26,26 +26,27 @@ export type TTLConfig = TTLRule[]
 export class UpstashKVAdapter implements KVAdapter {
   private prefix: string
   private redis: Redis
-  private resolveTTL?: (upstashKey: string) => number | undefined
+
+  private resolveTTL?: (key: string) => number | undefined
+  private key(key: string) {
+    return `${this.prefix}${key}`
+  }
 
   constructor(keyPrefix: string, redis: Redis, ttlConfig?: TTLConfig) {
     this.redis = redis
     this.prefix = keyPrefix
 
     if (ttlConfig) {
-      this.resolveTTL = (upstashKey: string) => {
+      this.resolveTTL = (key: string) => {
         for (const rule of ttlConfig) {
-          if (upstashKey.startsWith(rule.prefix)) {
+          if (key.startsWith(rule.prefix)) {
             return rule.ttl
           }
         }
+
         return undefined
       }
     }
-  }
-
-  private key(key: string) {
-    return `${this.prefix}${key}`
   }
 
   /**
