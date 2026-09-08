@@ -10,7 +10,7 @@ importers:
     dependencies:
       '@upstash/redis':
         specifier: ^1.38.3
-        version: 1.38.3
+        version: 1.38.4
     devDependencies:
       '@biomejs/biome':
         specifier: 2.5.11
@@ -801,8 +801,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@upstash/redis@1.38.3':
-    resolution: {integrity: sha512-vtS0BonQHU6kDSWvHTISh+LOuLIEk+jeMXebv20CDJ/aHGOG085SGa8OpI+I+Ow8WgPFhqH23XG8kQ2LXXRnag==}
+  '@upstash/redis@1.38.4':
+    resolution: {integrity: sha512-ZX69mKReun/yieyHYLoBg0eSiF6hjCQjd8zUKkJ5eCHehDV6P8S8oZOHxGSfkH1spfOhGZk0EGerBrfUsXow8g==}
 
   '@xhmikosr/archive-type@8.1.0':
     resolution: {integrity: sha512-EXOjEbnZFE5c/nFMf4FOrEURVanzHpnkPYmnmr78u02/8hAhE0FMq8p9TK1IM0/bFr5VcyBUY0gfLm8f7dKy+Q==}
@@ -3017,7 +3017,7 @@ snapshots:
   '@typescript/typescript-win32-x64@7.0.2':
     optional: true
 
-  '@upstash/redis@1.38.3':
+  '@upstash/redis@1.38.4':
     dependencies:
       uncrypto: 0.1.3
 
