@@ -2,6 +2,17 @@
 
 This package provides a way to use [Upstash](https://upstash.com) as a KV adapter with Payload.
 
+## Compatibility
+
+This plugin supports both Payload CMS v3 and v4 through a single release line.
+
+| Payload CMS | Release branch | npm dist-tag |
+| --- | --- | --- |
+| v4 | `main` | `latest` |
+| v3 | `main` | `latest` |
+
+Both versions are supported by the same package release. No separate branches or version-specific installations are required.
+
 ## Installation
 
 ```sh

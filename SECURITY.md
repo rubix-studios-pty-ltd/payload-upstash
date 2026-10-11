@@ -39,7 +39,7 @@ Please include the following details in your report:
 
 ## Best Practices
 
-When using PayloadCMS + Dub Plugin in production:
+When using PayloadCMS + Upstash Plugin in production:
 
 1. Keep all dependencies up to date
 2. Use secure environment variables for sensitive data
