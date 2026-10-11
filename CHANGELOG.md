@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+# [1.3.0](https://github.com/rubix-studios-pty-ltd/payload-upstash/compare/v1.2.15...v1.3.0) (2026-10-11)
+
+
+### Features
+
+* **upstash:** enforce key prefix and improve key management ([f7677d1](https://github.com/rubix-studios-pty-ltd/payload-upstash/commit/f7677d126ac660e44ea54f75bfbc0da13bdbc5f4))
+
 ## [1.2.15](https://github.com/rubix-studios-pty-ltd/payload-upstash/compare/v1.2.14...v1.2.15) (2026-09-18)
 
 
