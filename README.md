@@ -7,9 +7,9 @@ This package provides a way to use [Upstash](https://upstash.com) as a KV adapte
 This plugin supports both Payload CMS v3 and v4 through a single release line.
 
 | Payload CMS | Release branch | npm dist-tag |
-| --- | --- | --- |
-| v4 | `main` | `latest` |
-| v3 | `main` | `latest` |
+| ----------- | -------------- | ------------ |
+| v4          | `main`         | `latest`     |
+| v3          | `main`         | `latest`     |
 
 Both versions are supported by the same package release. No separate branches or version-specific installations are required.
 
@@ -57,7 +57,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Support
 
 For support or inquiries:
-
 - LinkedIn: [rubixvi](https://www.linkedin.com/in/rubixvi/)
 - Website: [Rubix Studios](https://rubixstudios.com.au)
 
