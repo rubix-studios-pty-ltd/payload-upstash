@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.3.4](https://github.com/rubix-studios-pty-ltd/payload-upstash/compare/v1.3.3...v1.3.4) (2026-11-12)
+
+
+### Bug Fixes
+
+* **sec:** node image update upstream ([ba02623](https://github.com/rubix-studios-pty-ltd/payload-upstash/commit/ba0262309496492585eb433d8db1e9c07d62f838))
+* **security:** node release version ([6c24203](https://github.com/rubix-studios-pty-ltd/payload-upstash/commit/6c24203527ed5f90bb407fb5c38138fa006b1bec))
+
 ## [1.3.3](https://github.com/rubix-studios-pty-ltd/payload-upstash/compare/v1.3.2...v1.3.3) (2026-11-11)
 
 
